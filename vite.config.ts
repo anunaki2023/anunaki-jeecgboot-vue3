@@ -32,6 +32,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   const isBuild = command === 'build';
 
   return {
+    logLevel:"info",
     base: VITE_PUBLIC_PATH,
     root,
     resolve: {

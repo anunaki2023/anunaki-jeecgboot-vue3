@@ -9,7 +9,7 @@
   "scripts": {
     "bootstrap": "pnpm install",
     "serve": "npm run dev",
-    "dev": "vite",
+    "dev": "vite --debug",
     "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
     "clean:lib": "rimraf node_modules",
     "build": "cross-env NODE_ENV=production NODE_OPTIONS=--max-old-space-size=8192 vite build && esno ./build/script/postBuild.ts",
