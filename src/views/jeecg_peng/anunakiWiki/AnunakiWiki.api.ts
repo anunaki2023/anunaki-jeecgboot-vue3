@@ -12,6 +12,7 @@ enum Api {
   importExcel = '/anunakiWiki/importExcel',
   exportXls = '/anunakiWiki/exportXls',
 }
+
 /**
  * 导出api
  * @param params
@@ -47,9 +48,17 @@ export const batchDelete = (params, handleSuccess) => {
     okText: '确认',
     cancelText: '取消',
     onOk: () => {
-      return defHttp.delete({ url: Api.deleteBatch, data: params }, { joinParamsToUrl: true }).then(() => {
-        handleSuccess();
-      });
+      return defHttp
+        .delete(
+          {
+            url: Api.deleteBatch,
+            data: params,
+          },
+          { joinParamsToUrl: true }
+        )
+        .then(() => {
+          handleSuccess();
+        });
     },
   });
 };
@@ -58,8 +67,8 @@ export const batchDelete = (params, handleSuccess) => {
  * @param params
  */
 export const saveOrUpdate = (params, isUpdate) => {
-  const url  = isUpdate ? Api.edit : Api.save;
+  const url = isUpdate ? Api.edit : Api.save;
   const res = defHttp.post({ url: url, params });
-  console.log(res)
-  return res
+  console.log(res);
+  return res;
 };
