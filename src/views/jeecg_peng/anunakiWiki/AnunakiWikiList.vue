@@ -1,5 +1,10 @@
 <template>
   <div>
+    <hr />
+    <textarea name="textarea" cols="50" rows="10">文本内容<br/>这个界面难做了</textarea>
+    <hr />
+  </div>
+  <div>
     <!--引用表格-->
     <BasicTable @register="registerTable" :rowSelection="rowSelection">
       <!--插槽:table标题-->
